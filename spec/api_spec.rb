@@ -42,6 +42,7 @@ describe API do
     it 'returns a list of manga data' do
       manga_data = JSON.parse(api.parse_results_manga)
       expect(manga_data).to be_a(Array)
+      expect(manga_data.first).to have_key('index')
       expect(manga_data.first).to have_key('title')
       expect(manga_data.first).to have_key('description')
     end
